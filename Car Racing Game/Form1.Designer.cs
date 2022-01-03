@@ -32,8 +32,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.Carro2 = new System.Windows.Forms.PictureBox();
             this.Carro1 = new System.Windows.Forms.PictureBox();
-            this.Player = new System.Windows.Forms.PictureBox();
-            this.Explosão = new System.Windows.Forms.PictureBox();
+            this.player = new System.Windows.Forms.PictureBox();
+            this.explosão = new System.Windows.Forms.PictureBox();
             this.award = new System.Windows.Forms.PictureBox();
             this.RoadTrack2 = new System.Windows.Forms.PictureBox();
             this.RoadTrack1 = new System.Windows.Forms.PictureBox();
@@ -44,8 +44,8 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Carro2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Carro1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Player)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Explosão)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.explosão)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.award)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RoadTrack2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RoadTrack1)).BeginInit();
@@ -56,8 +56,8 @@
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Controls.Add(this.Carro2);
             this.panel1.Controls.Add(this.Carro1);
-            this.panel1.Controls.Add(this.Player);
-            this.panel1.Controls.Add(this.Explosão);
+            this.panel1.Controls.Add(this.player);
+            this.panel1.Controls.Add(this.explosão);
             this.panel1.Controls.Add(this.award);
             this.panel1.Controls.Add(this.RoadTrack2);
             this.panel1.Controls.Add(this.RoadTrack1);
@@ -75,6 +75,7 @@
             this.Carro2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.Carro2.TabIndex = 2;
             this.Carro2.TabStop = false;
+            this.Carro2.Tag = "carRight";
             // 
             // Carro1
             // 
@@ -85,26 +86,27 @@
             this.Carro1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.Carro1.TabIndex = 2;
             this.Carro1.TabStop = false;
+            this.Carro1.Tag = "carLeft";
             // 
-            // Player
+            // player
             // 
-            this.Player.Image = global::Car_Racing_Game.Properties.Resources.carYellow;
-            this.Player.Location = new System.Drawing.Point(221, 420);
-            this.Player.Name = "Player";
-            this.Player.Size = new System.Drawing.Size(50, 99);
-            this.Player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.Player.TabIndex = 2;
-            this.Player.TabStop = false;
+            this.player.Image = global::Car_Racing_Game.Properties.Resources.carYellow;
+            this.player.Location = new System.Drawing.Point(221, 420);
+            this.player.Name = "player";
+            this.player.Size = new System.Drawing.Size(50, 99);
+            this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.player.TabIndex = 2;
+            this.player.TabStop = false;
             // 
-            // Explosão
+            // explosão
             // 
-            this.Explosão.Image = global::Car_Racing_Game.Properties.Resources.explosion;
-            this.Explosão.Location = new System.Drawing.Point(58, 352);
-            this.Explosão.Name = "Explosão";
-            this.Explosão.Size = new System.Drawing.Size(64, 64);
-            this.Explosão.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.Explosão.TabIndex = 2;
-            this.Explosão.TabStop = false;
+            this.explosão.Image = global::Car_Racing_Game.Properties.Resources.explosion;
+            this.explosão.Location = new System.Drawing.Point(58, 352);
+            this.explosão.Name = "explosão";
+            this.explosão.Size = new System.Drawing.Size(64, 64);
+            this.explosão.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.explosão.TabIndex = 2;
+            this.explosão.TabStop = false;
             // 
             // award
             // 
@@ -184,14 +186,15 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Car Racing Game";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyisdown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyisup);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Carro2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Carro1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Player)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Explosão)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.explosão)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.award)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RoadTrack2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RoadTrack1)).EndInit();
@@ -207,8 +210,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox Carro2;
         private System.Windows.Forms.PictureBox Carro1;
-        private System.Windows.Forms.PictureBox Player;
-        private System.Windows.Forms.PictureBox Explosão;
+        private System.Windows.Forms.PictureBox player;
+        private System.Windows.Forms.PictureBox explosão;
         private System.Windows.Forms.PictureBox award;
         private System.Windows.Forms.PictureBox RoadTrack2;
         private System.Windows.Forms.PictureBox RoadTrack1;

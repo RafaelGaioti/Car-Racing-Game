@@ -15,7 +15,7 @@ namespace Car_Racing_Game
 
         int roadSpeed;
         int trafficSpeed;
-        int playerSpeed;
+        int playerSpeed = 12;
         int score;
         int carImage;
 
@@ -27,6 +27,7 @@ namespace Car_Racing_Game
         public Form1()
         {
             InitializeComponent();
+            ResetGame();
         }
 
         private void keyisdown(object sender, KeyEventArgs e)
@@ -57,6 +58,15 @@ namespace Car_Racing_Game
 
         private void gameTimerEvent(object sender, EventArgs e)
         {
+            //Faz o player se movimentar pela estrada sem sair da borda do Panel 
+            if (goleft == true && player.Left > 5)
+            {
+                player.Left -= playerSpeed;
+            }
+            if (goright == true && player.Left < 422)
+            {
+                player.Left += playerSpeed;
+            }
 
         }
 
@@ -74,7 +84,7 @@ namespace Car_Racing_Game
         {
             //Resetando as variáveis para o estágio inicial
             btnStart.Enabled = false;
-            Explosão.Visible = false;
+            explosão.Visible = false;
             award.Visible = false;
             goleft = false;
             goright = false;
@@ -88,13 +98,18 @@ namespace Car_Racing_Game
             Carro1.Left = carPosition.Next(5, 200);
 
             Carro2.Top = carPosition.Next(200, 500) * -1;
-            Carro2.Left = carPosition.Next(245, 430);
+            Carro2.Left = carPosition.Next(245, 422);
 
             gameTimer.Start();
 
         }
 
         private void RoadTrack2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
