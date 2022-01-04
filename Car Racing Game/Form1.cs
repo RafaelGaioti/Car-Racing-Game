@@ -58,6 +58,10 @@ namespace Car_Racing_Game
 
         private void gameTimerEvent(object sender, EventArgs e)
         {
+
+            txtScore.Text = "Score: " + score;
+            score++;
+
             //Faz o player se movimentar pela estrada sem sair da borda do Panel 
             if (goleft == true && player.Left > 10)
             {
@@ -71,8 +75,8 @@ namespace Car_Racing_Game
             roadTrack1.Top += roadSpeed;
             roadTrack2.Top += roadSpeed;
 
-            /*Cria uma ilusão de ótica de movimento em que se a roadTrack2 chegar no fim do panel,
-             *ela retornará para o topo trocando de posição com a roadTrack1 :D */
+            /*Cria uma ilusão ótica de movimento em que se a roadTrack2 chegar no fim do panel,
+             *ela retornará para o topo trocando de posição com a roadTrack1. */
             if (roadTrack2.Top > 519)
             {
                 roadTrack2.Top = -519;
@@ -81,11 +85,95 @@ namespace Car_Racing_Game
             {
                 roadTrack1.Top = -519;
             }
+
+            AI1.Top += trafficSpeed;
+            AI2.Top += trafficSpeed;
+
+            //Troca a imagem e a posição dos carros quando eles reaparecem no topo
+            if (AI1.Top > 530)
+            {
+                changeAIcars(AI1);
+            }
+
+            if (AI2.Top > 530)
+            {
+                changeAIcars(AI2);
+            }
+
+            //Se as hitboxes dos carros colidirem, o jogo acaba
+            if (player.Bounds.IntersectsWith(AI1.Bounds) || player.Bounds.IntersectsWith(AI2.Bounds))
+            {
+                gameOver();
+            }
+
+            //Se o score for maior que 40 e menor que 500, o jogador recebe a medalha de bronze
+            if (score > 40 && score < 500)
+            {
+                award.Image = Properties.Resources.bronze;
+            }
+            /*Se o score for maior que 500 e menor que 2000, o jogador recebe a medalha de prata
+              e a velocidade do jogo também aumenta */
+            if (score > 500 && score < 2000)
+            {
+                award.Image = Properties.Resources.silver;
+                roadSpeed = 20;
+                trafficSpeed = 22;
+            }
+            /*Se o score for maior que 2000, o jogador recebe a medalha de ouro e a velocidade do 
+             jogo aumenta*/
+            if (score > 2000)
+            {
+                award.Image = Properties.Resources.gold;
+                trafficSpeed = 27;
+                roadSpeed = 25;
+            }
         }
 
         private void changeAIcars(PictureBox tempCar)
-        {
+        { 
+            carImage = rand.Next(1, 8);
 
+            //Faz o sorteio do carro que vai aparecer em seguida
+            switch (carImage)
+            {
+                case 1:
+                    tempCar.Image = Properties.Resources.ambulance;
+                    break;
+                case 2:
+                    tempCar.Image= Properties.Resources.carGreen;
+                    break;
+                case 3:
+                    tempCar.Image = Properties.Resources.carGrey;
+                    break;
+                case 4:
+                    tempCar.Image = Properties.Resources.carOrange;
+                    break;
+                case 5:
+                    tempCar.Image = Properties.Resources.carPink;
+                    break;
+                case 6:
+                    tempCar.Image = Properties.Resources.CarRed;
+                    break;
+                case 7:
+                    tempCar.Image = Properties.Resources.TruckWhite;
+                    break;
+                case 8:
+                    tempCar.Image = Properties.Resources.TruckBlue;
+                    break;
+            }
+
+            tempCar.Top = carPosition.Next(100, 400) * -1;
+
+            //Troca a posição dos carros a cada vez que aparecem
+            if ((string)tempCar.Tag == "carleft")
+            {
+                tempCar.Left = carPosition.Next(5, 200);
+            }
+
+            if ((string)tempCar.Tag == "carRight")
+            {
+                tempCar.Left = carPosition.Next(245, 422);
+            }
         }
 
         private void gameOver()
@@ -108,11 +196,11 @@ namespace Car_Racing_Game
             trafficSpeed = 15;
 
             //A ser Comentado
-            Carro1.Top = carPosition.Next(200, 500) * -1;
-            Carro1.Left = carPosition.Next(5, 200);
+            AI1.Top = carPosition.Next(200, 500) * -1;
+            AI1.Left = carPosition.Next(5, 200);
 
-            Carro2.Top = carPosition.Next(200, 500) * -1;
-            Carro2.Left = carPosition.Next(245, 422);
+            AI2.Top = carPosition.Next(200, 500) * -1;
+            AI2.Left = carPosition.Next(245, 422);
 
             gameTimer.Start();
 
