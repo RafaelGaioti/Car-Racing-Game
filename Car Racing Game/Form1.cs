@@ -59,15 +59,28 @@ namespace Car_Racing_Game
         private void gameTimerEvent(object sender, EventArgs e)
         {
             //Faz o player se movimentar pela estrada sem sair da borda do Panel 
-            if (goleft == true && player.Left > 5)
+            if (goleft == true && player.Left > 10)
             {
                 player.Left -= playerSpeed;
             }
-            if (goright == true && player.Left < 422)
+            if (goright == true && player.Left < 415)
             {
                 player.Left += playerSpeed;
             }
 
+            roadTrack1.Top += roadSpeed;
+            roadTrack2.Top += roadSpeed;
+
+            /*Cria uma ilusão de ótica de movimento em que se a roadTrack2 chegar no fim do panel,
+             *ela retornará para o topo trocando de posição com a roadTrack1 :D */
+            if (roadTrack2.Top > 519)
+            {
+                roadTrack2.Top = -519;
+            }
+            if (roadTrack1.Top > 519)
+            {
+                roadTrack1.Top = -519;
+            }
         }
 
         private void changeAIcars(PictureBox tempCar)
@@ -94,6 +107,7 @@ namespace Car_Racing_Game
             roadSpeed = 12;
             trafficSpeed = 15;
 
+            //A ser Comentado
             Carro1.Top = carPosition.Next(200, 500) * -1;
             Carro1.Left = carPosition.Next(5, 200);
 

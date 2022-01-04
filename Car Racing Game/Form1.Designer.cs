@@ -35,8 +35,8 @@
             this.player = new System.Windows.Forms.PictureBox();
             this.explosão = new System.Windows.Forms.PictureBox();
             this.award = new System.Windows.Forms.PictureBox();
-            this.RoadTrack2 = new System.Windows.Forms.PictureBox();
-            this.RoadTrack1 = new System.Windows.Forms.PictureBox();
+            this.roadTrack2 = new System.Windows.Forms.PictureBox();
+            this.roadTrack1 = new System.Windows.Forms.PictureBox();
             this.btnStart = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,8 +47,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.explosão)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.award)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RoadTrack2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RoadTrack1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roadTrack2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roadTrack1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -59,8 +59,8 @@
             this.panel1.Controls.Add(this.player);
             this.panel1.Controls.Add(this.explosão);
             this.panel1.Controls.Add(this.award);
-            this.panel1.Controls.Add(this.RoadTrack2);
-            this.panel1.Controls.Add(this.RoadTrack1);
+            this.panel1.Controls.Add(this.roadTrack2);
+            this.panel1.Controls.Add(this.roadTrack1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(475, 519);
@@ -118,26 +118,26 @@
             this.award.TabIndex = 2;
             this.award.TabStop = false;
             // 
-            // RoadTrack2
+            // roadTrack2
             // 
-            this.RoadTrack2.Image = global::Car_Racing_Game.Properties.Resources.roadTrack;
-            this.RoadTrack2.Location = new System.Drawing.Point(0, 0);
-            this.RoadTrack2.Name = "RoadTrack2";
-            this.RoadTrack2.Size = new System.Drawing.Size(475, 519);
-            this.RoadTrack2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.RoadTrack2.TabIndex = 1;
-            this.RoadTrack2.TabStop = false;
-            this.RoadTrack2.Click += new System.EventHandler(this.RoadTrack2_Click);
+            this.roadTrack2.Image = global::Car_Racing_Game.Properties.Resources.roadTrack;
+            this.roadTrack2.Location = new System.Drawing.Point(0, 0);
+            this.roadTrack2.Name = "roadTrack2";
+            this.roadTrack2.Size = new System.Drawing.Size(475, 519);
+            this.roadTrack2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.roadTrack2.TabIndex = 1;
+            this.roadTrack2.TabStop = false;
+            this.roadTrack2.Click += new System.EventHandler(this.RoadTrack2_Click);
             // 
-            // RoadTrack1
+            // roadTrack1
             // 
-            this.RoadTrack1.Image = global::Car_Racing_Game.Properties.Resources.roadTrack;
-            this.RoadTrack1.Location = new System.Drawing.Point(0, -519);
-            this.RoadTrack1.Name = "RoadTrack1";
-            this.RoadTrack1.Size = new System.Drawing.Size(475, 519);
-            this.RoadTrack1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.RoadTrack1.TabIndex = 0;
-            this.RoadTrack1.TabStop = false;
+            this.roadTrack1.Image = global::Car_Racing_Game.Properties.Resources.roadTrack;
+            this.roadTrack1.Location = new System.Drawing.Point(0, -519);
+            this.roadTrack1.Name = "roadTrack1";
+            this.roadTrack1.Size = new System.Drawing.Size(475, 519);
+            this.roadTrack1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.roadTrack1.TabIndex = 0;
+            this.roadTrack1.TabStop = false;
             // 
             // btnStart
             // 
@@ -196,8 +196,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.explosão)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.award)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RoadTrack2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RoadTrack1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roadTrack2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roadTrack1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -213,8 +213,8 @@
         private System.Windows.Forms.PictureBox player;
         private System.Windows.Forms.PictureBox explosão;
         private System.Windows.Forms.PictureBox award;
-        private System.Windows.Forms.PictureBox RoadTrack2;
-        private System.Windows.Forms.PictureBox RoadTrack1;
+        private System.Windows.Forms.PictureBox roadTrack2;
+        private System.Windows.Forms.PictureBox roadTrack1;
         private System.Windows.Forms.Timer gameTimer;
     }
 }
