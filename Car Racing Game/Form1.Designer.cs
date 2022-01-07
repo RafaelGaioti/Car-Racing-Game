@@ -33,7 +33,7 @@
             this.AI2 = new System.Windows.Forms.PictureBox();
             this.AI1 = new System.Windows.Forms.PictureBox();
             this.player = new System.Windows.Forms.PictureBox();
-            this.explosão = new System.Windows.Forms.PictureBox();
+            this.explosion = new System.Windows.Forms.PictureBox();
             this.award = new System.Windows.Forms.PictureBox();
             this.roadTrack2 = new System.Windows.Forms.PictureBox();
             this.roadTrack1 = new System.Windows.Forms.PictureBox();
@@ -45,7 +45,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.AI2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AI1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.explosão)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.explosion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.award)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roadTrack2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roadTrack1)).BeginInit();
@@ -57,7 +57,7 @@
             this.panel1.Controls.Add(this.AI2);
             this.panel1.Controls.Add(this.AI1);
             this.panel1.Controls.Add(this.player);
-            this.panel1.Controls.Add(this.explosão);
+            this.panel1.Controls.Add(this.explosion);
             this.panel1.Controls.Add(this.award);
             this.panel1.Controls.Add(this.roadTrack2);
             this.panel1.Controls.Add(this.roadTrack1);
@@ -98,15 +98,15 @@
             this.player.TabIndex = 2;
             this.player.TabStop = false;
             // 
-            // explosão
+            // explosion
             // 
-            this.explosão.Image = global::Car_Racing_Game.Properties.Resources.explosion;
-            this.explosão.Location = new System.Drawing.Point(58, 352);
-            this.explosão.Name = "explosão";
-            this.explosão.Size = new System.Drawing.Size(64, 64);
-            this.explosão.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.explosão.TabIndex = 2;
-            this.explosão.TabStop = false;
+            this.explosion.Image = global::Car_Racing_Game.Properties.Resources.explosion;
+            this.explosion.Location = new System.Drawing.Point(58, 352);
+            this.explosion.Name = "explosion";
+            this.explosion.Size = new System.Drawing.Size(64, 64);
+            this.explosion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.explosion.TabIndex = 2;
+            this.explosion.TabStop = false;
             // 
             // award
             // 
@@ -148,6 +148,7 @@
             this.btnStart.TabIndex = 1;
             this.btnStart.Text = "Jogar";
             this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.restartGame);
             // 
             // txtScore
             // 
@@ -194,7 +195,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.AI2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AI1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.explosão)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.explosion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.award)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roadTrack2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roadTrack1)).EndInit();
@@ -211,7 +212,7 @@
         private System.Windows.Forms.PictureBox AI2;
         private System.Windows.Forms.PictureBox AI1;
         private System.Windows.Forms.PictureBox player;
-        private System.Windows.Forms.PictureBox explosão;
+        private System.Windows.Forms.PictureBox explosion;
         private System.Windows.Forms.PictureBox award;
         private System.Windows.Forms.PictureBox roadTrack2;
         private System.Windows.Forms.PictureBox roadTrack1;

@@ -178,6 +178,18 @@ namespace Car_Racing_Game
 
         private void gameOver()
         {
+            //Mostra a explosão a centraliza do player, mostra a award e habilita o áudio da batida. 
+            playSound();
+            gameTimer.Stop();
+            explosion.Visible = true;
+            player.Controls.Add(explosion);
+            explosion.Location = new Point(-8, -5);
+            explosion.BackColor = Color.Transparent;
+
+            award.Visible = true;
+            award.BringToFront();
+
+            btnStart.Enabled = true;
 
         }
 
@@ -185,7 +197,7 @@ namespace Car_Racing_Game
         {
             //Resetando as variáveis para o estágio inicial
             btnStart.Enabled = false;
-            explosão.Visible = false;
+            explosion.Visible = false;
             award.Visible = false;
             goleft = false;
             goright = false;
@@ -216,9 +228,15 @@ namespace Car_Racing_Game
 
         }
 
+        private void restartGame(object sender, EventArgs e)
+        {
+            ResetGame();
+        }
+
         private void playSound()
         {
-
+            System.Media.SoundPlayer playCrash = new System.Media.SoundPlayer(Properties.Resources.hit);
+            playCrash.Play();
         }
 
     }
